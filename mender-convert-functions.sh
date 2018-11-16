@@ -4,9 +4,11 @@
 partition_alignment=8388608
 # Boot partition storage offset in bytes (equal to alignment).
 vfat_storage_offset_regular=$partition_alignment
+# Size of U-Boot environment
+uboot_env_size=$(( $partition_alignment * 2 ))
 #erase_block=12582912
 # Boot partition storage offset in bytes (alignment * 2).
-vfat_storage_offset_extended=$(($partition_alignment*2 ))
+vfat_storage_offset_extended=$(($partition_alignment + $uboot_env_size))
 # Number of required heads in a final image.
 heads=255
 # Number of required sectors in a final image.

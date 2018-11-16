@@ -508,7 +508,9 @@ do_install_bootloader_to_mender_disk_image() {
       [[ $ret -ne 0 ]] && { log "\nInstalling Bootloader failed."; return $ret; }
 
       # Update test configuration file
-      update_test_config_file $device_type mount-location "\/uboot"
+      update_test_config_file $device_type distro-feature "mender-uboot" \
+                                           mount-location "\/uboot"
+      # Update test configuration file
       ;;
   esac
 

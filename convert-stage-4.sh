@@ -110,8 +110,8 @@ create_client_files() {
       ;;
     "raspberrypi3")
       cat <<- EOF > $mender_dir/fw_env.config
-	/dev/mmcblk0 0x400000 0x4000
 	/dev/mmcblk0 0x800000 0x4000
+	/dev/mmcblk0 0x1000000 0x40000
 	EOF
       ;;
   esac
